@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+.env
+venv/
+ml/repos/
+.pytest_cache/
+*.pkl
+!ml/bug_model.pkl
+!ml/model_config.json

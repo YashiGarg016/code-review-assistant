@@ -1,0 +1,309 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #0f172a;
+  color: #e2e8f0;
+  min-height: 100vh;
+}
+
+.app {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+header h1 { font-size: 2rem; margin-bottom: 0.5rem; }
+header p { color: #94a3b8; }
+
+/* Repo Input */
+.repo-input {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+.repo-input input {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #334155;
+  background: #1e293b;
+  color: #e2e8f0;
+  font-size: 1rem;
+}
+
+.repo-input input:focus { outline: none; border-color: #6366f1; }
+
+.repo-input button {
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  border: none;
+  background: #6366f1;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.repo-input button:disabled { opacity: 0.5; cursor: not-allowed; }
+.repo-input button:hover:not(:disabled) { background: #4f46e5; }
+
+/* Error */
+.error-banner {
+  background: #450a0a;
+  border: 1px solid #ef4444;
+  color: #fca5a5;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+/* Dashboard */
+.dashboard-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.dashboard-header h2 { font-size: 1.5rem; }
+
+.badge {
+  background: #1e293b;
+  border: 1px solid #334155;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  color: #94a3b8;
+}
+
+/* Risk Chart */
+.risk-chart {
+  background: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.risk-chart h3 { margin-bottom: 1rem; font-size: 1rem; color: #94a3b8; }
+
+/* Main Panel */
+.main-panel {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 1.5rem;
+}
+
+/* File Tree */
+.file-tree {
+  background: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 12px;
+  padding: 1rem;
+  height: fit-content;
+}
+
+.file-tree h3 { margin-bottom: 1rem; font-size: 0.9rem; color: #94a3b8; }
+
+.file-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.6rem 0.75rem;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 0.25rem;
+  gap: 0.5rem;
+}
+
+.file-item:hover { background: #273548; }
+.file-item.active { background: #1e3a5f; border: 1px solid #3b82f6; }
+
+.file-path {
+  font-size: 0.8rem;
+  color: #cbd5e1;
+  word-break: break-all;
+}
+
+.risk-badge {
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  color: white;
+  white-space: nowrap;
+}
+
+/* Code Viewer */
+.code-viewer {
+  background: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+
+.code-viewer h3 {
+  font-size: 0.95rem;
+  color: #94a3b8;
+  margin-bottom: 1.25rem;
+  word-break: break-all;
+}
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.metric-card {
+  background: #0f172a;
+  border-radius: 8px;
+  padding: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.metric-label { font-size: 0.75rem; color: #64748b; }
+.metric-value { font-size: 1.4rem; font-weight: 700; }
+
+/* Issues */
+.issue-section { margin-bottom: 1.25rem; }
+.issue-section h4 { font-size: 0.9rem; margin-bottom: 0.5rem; color: #94a3b8; }
+
+.issue-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.6rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  margin-bottom: 0.35rem;
+}
+
+.issue-item.red { background: #450a0a; border-left: 3px solid #ef4444; }
+.issue-item.yellow { background: #422006; border-left: 3px solid #f59e0b; }
+
+.severity-tag {
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 0.15rem 0.4rem;
+  background: #7f1d1d;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+.line-tag { color: #64748b; font-size: 0.75rem; margin-left: auto; }
+
+.ast-summary {
+  display: flex;
+  gap: 1.5rem;
+  font-size: 0.9rem;
+  color: #94a3b8;
+}
+
+.bug-prediction {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: #0f172a;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.bp-label { font-size: 0.85rem; color: #94a3b8; }
+.bp-score { font-size: 1.1rem; font-weight: 700; }
+.bp-confidence {
+  font-size: 0.75rem;
+  color: #64748b;
+  margin-left: auto;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.explanation-block {
+  background: #0f172a;
+  border: 1px solid #1e3a5f;
+  border-radius: 10px;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.explanation-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #1e293b;
+}
+
+.explanation-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #e2e8f0;
+}
+
+.verdict-badge {
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.25rem 0.85rem;
+  border-radius: 999px;
+  letter-spacing: 0.08em;
+}
+
+/* Markdown styles */
+.explanation-text { color: #cbd5e1; font-size: 0.875rem; line-height: 1.75; }
+.explanation-text .md-h4 {
+  color: #e2e8f0;
+  font-size: 0.875rem;
+  font-weight: 700;
+  margin: 1.1rem 0 0.4rem;
+  padding-bottom: 0.25rem;
+  border-bottom: 1px solid #1e293b;
+}
+.explanation-text .md-h5 {
+  color: #94a3b8;
+  font-size: 0.82rem;
+  font-weight: 600;
+  margin: 0.6rem 0 0.25rem;
+}
+.explanation-text .md-p  { margin: 0.3rem 0; }
+.explanation-text .md-li {
+  padding: 0.2rem 0 0.2rem 0.75rem;
+  color: #94a3b8;
+}
+.explanation-text .md-li-num {
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.3rem 0;
+  color: #cbd5e1;
+}
+.explanation-text .md-num {
+  color: #6366f1;
+  font-weight: 700;
+  min-width: 1.2rem;
+}
+.explanation-text .md-code {
+  background: #1e293b;
+  color: #a5b4fc;
+  padding: 0.1rem 0.4rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-family: monospace;
+}
+.explanation-text strong { color: #e2e8f0; font-weight: 600; }
+
+.lang-badge {
+  font-size: 0.85rem;
+  flex-shrink: 0;
+}
